@@ -20,6 +20,7 @@
     <junit-jupiter.version>5.7.0</junit-jupiter.version>
 
     <main.verticle>dev.rfj.vertx_example.SensorVerticle</main.verticle>
+    <main.class>dev.rfj.vertx_example.Main</main.class>
     <launcher.class>io.vertx.core.Launcher</launcher.class>
 
     <logback-classic.version>1.2.9</logback-classic.version>
@@ -119,7 +120,7 @@
           <mainClass>io.vertx.core.Launcher</mainClass>
           <arguments>
             <argument>run</argument>
-            <argument>${main.verticle}</argument>
+            <argument>${main.class}</argument>
           </arguments>
         </configuration>
       </plugin>
