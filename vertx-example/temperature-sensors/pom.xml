@@ -19,8 +19,10 @@
     <vertx.version>4.3.2</vertx.version>
     <junit-jupiter.version>5.7.0</junit-jupiter.version>
 
-    <main.verticle>dev.rfj.vertx_example.MainVerticle</main.verticle>
+    <main.verticle>dev.rfj.vertx_example.SensorVerticle</main.verticle>
     <launcher.class>io.vertx.core.Launcher</launcher.class>
+
+    <logback-classic.version>1.2.3</logback-classic.version>
   </properties>
 
   <dependencyManagement>
@@ -36,6 +38,12 @@
   </dependencyManagement>
 
   <dependencies>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback-classic.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
@@ -117,6 +125,4 @@
       </plugin>
     </plugins>
   </build>
-
-
 </project>
