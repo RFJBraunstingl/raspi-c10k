@@ -22,7 +22,7 @@
     <main.verticle>dev.rfj.vertx_example.SensorVerticle</main.verticle>
     <launcher.class>io.vertx.core.Launcher</launcher.class>
 
-    <logback-classic.version>1.2.3</logback-classic.version>
+    <logback-classic.version>1.2.9</logback-classic.version>
   </properties>
 
   <dependencyManagement>

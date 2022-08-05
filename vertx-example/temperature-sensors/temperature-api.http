@@ -1,0 +1,2 @@
+### GET temperature data
+GET http://localhost:8080/data

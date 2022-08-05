@@ -2,6 +2,7 @@ package dev.rfj.vertx_example;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
+import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import org.slf4j.Logger;
@@ -39,7 +40,15 @@ public class SensorVerticle extends AbstractVerticle {
   }
 
   private void getTemperatureData(RoutingContext routingContext) {
+    LOG.info("Processing HTTP request from {}", routingContext.request().remoteAddress());
+    JsonObject payload = new JsonObject()
+      .put("uuid", uuid)
+      .put("temperature", temperature)
+      .put("timestamp", System.currentTimeMillis());
 
+    routingContext.response()
+      .putHeader("Content-Type", "application/json")
+      .end(payload.encode());
   }
 
   private void updateTemperature(Long timerIdentifier) {
